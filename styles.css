@@ -1,0 +1,144 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+     url(https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYjNvb3Axbng3bDB6MHBudDI4b21nNnVmZjlia2gwN3R6dnR0dHJrbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tjYS8yUChlzSmdKx9x/giphy.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    back-
+}
+
+.time h3 {
+    font-weight: 300;
+    font-size: 1rem;
+    opacity: 0.8;
+    letter-spacing: 1px;
+}
+
+.text-btn {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.time h1 {
+    font-size: 3.5rem;
+    font-weight: 600;
+    margin: 10px 0;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.visually-hidden {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+}
+
+.container {
+    padding: 20px;
+    min-height: 100vh;
+    /* Flexbox magic to push top and bottom apart */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.handles {
+    display: flex;
+    flex-direction: rows;
+    gap: 10px;
+}
+
+#button {
+    backdrop-filter: blur(5px);
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.toprow {
+    color: #e1e5e7;
+    /* Flexbox magic to push left and right apart */
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+img:hover {
+    transform: scale(1.1);
+}
+
+.next:hover,
+.prev:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.05);
+    /* Makes them pop out slightly */
+}
+
+.bottomleft {
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    width:fit-content;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.078);
+    color: antiquewhite;
+    padding: 20px 30px;
+    border-radius: 16px;
+    gap: 20px;
+}
+
+.next,
+.prev {
+    border: 2px;
+    border-color: red;
+    background-color: black;
+    color: antiquewhite;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.time {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.078);
+    color: antiquewhite;
+    padding: 20px 30px;
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+}
+
+img {
+    width: 15px;
+    filter: invert(1) brightness(2)
+}

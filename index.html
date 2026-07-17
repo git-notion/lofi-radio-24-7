@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lo-fi Cafe</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -21,10 +22,10 @@
             <div class="rightup">
                 <div class="handles">
                     <button id="button" title="facebook">
-                        <img src="https://www.svgrepo.com/show/494341/facebook.svg" alt="" class="shady">
+                        <img src="https://www.svgrepo.com/show/494341/facebook.svg" alt="" id="fb">
                     </button>
                     <button id="button" title="github">
-                        <img src="https://www.svgrepo.com/show/494345/gplus.svg" alt="" class="shady">
+                        <img src="https://www.svgrepo.com/show/521688/github.svg" alt="" id="shady">
                     </button>
                 </div>
                 <!-- <div class="todo"></div> -->
@@ -32,19 +33,20 @@
         </div>
 
         <div class="bottomleft">
+            <button id="prev-btn" class="text-btn">Prev</button>
             <button id="pause-btn">
                 <img src="https://www.svgrepo.com/show/535553/pause.svg" alt="" class="shady">
             </button>
             <button id="play-btn">
                 <img src="https://www.svgrepo.com/show/535571/play.svg" alt="" class="shady">
             </button>
-            <div class="next">Next Radio</div>
-            <div class="prev">Previous Radio</div>
+            <button id="next-btn" class="text-btn">Next</button>
         </div>
     </div>
 </body>
 <script src="ytapi.js"></script>
 <script>
+    //controlling the clock
     const clk = document.getElementById('clock');
     function upclock() {
         const now = new Date()
@@ -54,132 +56,10 @@
     upclock();
     setInterval(upclock, 1000)
 
-
+    //link ref
+    document.getElementById('shady').addEventListener('click',function(){
+        window.open("https://github.com/git-notion", "_blank");
+    })
 </script>
-
-<style>
-    * {
-        box-sizing: border-box;
-    }
-
-    body {
-        background-image: url(https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYjNvb3Axbng3bDB6MHBudDI4b21nNnVmZjlia2gwN3R6dnR0dHJrbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tjYS8yUChlzSmdKx9x/giphy.gif);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        min-height: 100vh;
-        margin: 0;
-        font-family: 'Poppins', sans-serif;
-        color: #ffffff;
-
-    }
-
-    .time h3 {
-        font-weight: 300;
-        font-size: 1rem;
-        opacity: 0.8;
-        letter-spacing: 1px;
-    }
-
-    .time h1 {
-        font-size: 3.5rem;
-        font-weight: 600;
-        margin: 10px 0;
-        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .visually-hidden {
-        position: absolute;
-        left: -9999px;
-        top: -9999px;
-    }
-
-    .container {
-        padding: 20px;
-        min-height: 100vh;
-        /* Flexbox magic to push top and bottom apart */
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    .handles {
-        display: flex;
-        flex-direction: rows;
-        gap: 10px;
-    }
-
-    #button {
-        backdrop-filter: blur(5px);
-        border-radius: 50%;
-        height: 45px;
-        width: 45px;
-        backdrop-filter: blur(5px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    button {
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 0;
-    }
-
-    .toprow {
-        color: #e1e5e7;
-        /* Flexbox magic to push left and right apart */
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-
-    }
-
-    button:hover {
-        transform: scale(1.1);
-    }
-
-    img:hover {
-        transform: scale(1.1);
-    }
-
-    .next:hover,
-    .prev:hover {
-        background-color: white;
-        color: black;
-        transform: scale(1.05);
-        /* Makes them pop out slightly */
-    }
-
-    .bottomleft {
-        width: 250px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .next,
-    .prev {
-        border: 2px;
-        border-color: red;
-        background-color: black;
-        color: antiquewhite;
-        padding: 4px;
-        border-radius: 4px;
-    }
-
-    .time {
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-color: rgb(255, 255, 255);
-        background-color: rgba(0, 0, 0, 0.078);
-        color: antiquewhite;
-        padding: 20px 30px;
-        border-radius: 16px;
-        backdrop-filter: blur(10px);
-    }
-
-    img {
-        width: 15px;
-    }
-</style>
 
 </html>
