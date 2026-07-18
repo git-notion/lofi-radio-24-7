@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lo-fi Cafe</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon.png">
 </head>
 
 <body>
+    <div id="static-overlay"></div>
     <div class="visually-hidden">
         <div id="player"></div>
     </div>
@@ -50,7 +52,7 @@
     const clk = document.getElementById('clock');
     function upclock() {
         const now = new Date()
-        const timestr = now.toLocaleTimeString();
+        const timestr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
         clk.textContent = timestr;
     }
     upclock();

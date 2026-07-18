@@ -126,3 +126,48 @@ document.getElementById('next-btn').addEventListener('click', function() {
 document.getElementById('prev-btn').addEventListener('click', function() {
     loadStation(currentStationIndex - 1);
 });
+
+// --- Next & Prev Button Logic ---
+
+// Load a public domain white noise/static sound
+const staticSound = new Audio('https://upload.wikimedia.org/wikipedia/commons/d/d9/White_noise.ogg');
+staticSound.volume = 0.4; // Keep it at 40% volume so it isn't too loud
+
+function loadStation(index) {
+    if (index >= stations.length) {
+        currentStationIndex = 0;
+    } else if (index < 0) {
+        currentStationIndex = stations.length - 1;
+    } else {
+        currentStationIndex = index;
+    }
+
+    const station = stations[currentStationIndex];
+    const overlay = document.getElementById('static-overlay');
+
+    // 1. Start the visual and audio static effect
+    overlay.classList.add('show-static');
+    staticSound.currentTime = 0; // Rewind sound to the beginning
+    staticSound.play();
+
+    // Temporarily update title while the static plays
+    document.getElementById('current-song').textContent = "Tuning in to " + station.name + "...";
+
+    // 2. Wait for 600 milliseconds, then swap the channel
+    setTimeout(() => {
+        // Change the background image
+        document.body.style.backgroundImage = `url('${station.bgImage}')`;
+
+        // Change the YouTube video
+        if (player && player.loadVideoById) {
+            player.loadVideoById(station.videoId);
+        }
+
+        // Remove visual static
+        overlay.classList.remove('show-static');
+
+        // Stop audio static
+        staticSound.pause();
+
+    }, 2000); // 600ms = just over half a second of static
+}

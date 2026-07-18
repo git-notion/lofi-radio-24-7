@@ -15,6 +15,23 @@ body {
     back-
 }
 
+#static-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* A classic TV static GIF */
+    background-image: url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGp5d25vdm84cGk2b3MyaXZuaHRhcnhkYjVxcTR1NGJ0dHBqNDl5YiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/iWU4XWUNbsGZzqSNkP/200.webp');
+    background-size: cover;
+    z-index: 1000; /* Keeps it on top of everything */
+    opacity: 0;
+    pointer-events: none; /* Prevents it from blocking your clicks */
+    transition: opacity 0.1s ease;
+}
+.show-static {
+    opacity: 0.4; /* Set to 0.4 so it's not blindingly bright */
+}
 .time h3 {
     font-weight: 300;
     font-size: 1rem;
